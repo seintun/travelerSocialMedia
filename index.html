@@ -29,9 +29,6 @@
                         <a class="nav-link" href="./index.html">Home <span class="sr-only">(current)</span></a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="#">Login</a>
-                    </li>
-                    <li class="nav-item">
                         <a class="nav-link" href="./join.html">Join</a>
                     </li>
                     <li class="nav-item">
@@ -48,12 +45,24 @@
                     </li>
                 </ul>
                 <form class="form-inline my-2 my-lg-0">
-                <input class="form-control mr-sm-2" type="text" placeholder="Search">
-                <button class="btn btn-secondary my-2 my-sm-0" type="submit">Search</button>
+                    <input class="form-control mr-sm-2" type="text" placeholder="Search">
+                    <button class="btn btn-secondary my-2 my-sm-0" type="submit">Search</button>
                 </form>
             </div>
         </nav>
-
+        <div class="login floatContainer">
+            <form class="form-inline my-2 my-lg-0">
+                <input id = "loginAvartar" class="form-control mr-sm-2" type="text" placeholder="Avartar Name">
+                <input id = "loginPassword" type="password" class="form-control mr-sm-2" placeholder="Password">
+                <button class="btn btn-secondary my-2 my-sm-0" onclick="checkLocal()" type="submit">Submit</button>
+                <p class="loginLink">
+                    <a href="./join.html">Join HERE</a>
+                </p>
+                <p class="loginLink">
+                    <a href="#" onclick="localStorage.clear();">Clear Data</a>
+                </p>
+            </form>
+        </div>
         <!-- Welcome Page with minimal design -->
         <main>
             <section class="container indexBackground">

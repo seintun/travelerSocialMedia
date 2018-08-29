@@ -17,6 +17,13 @@ body {
     max-height: auto;
 }
 
+a:hover   {
+    color: peru;
+}
+
+.loginLink {
+    padding: 0.5em;
+}
 /* Container Styles */
 .container {
     background-position: center;

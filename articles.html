@@ -7,10 +7,9 @@
 
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="stylesheet" href="https://bootswatch.com/4/sketchy/bootstrap.min.css">
-    <!-- Star Ratings CSS -->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-    <link rel="stylesheet" type="text/css" media="screen" href="./styles/articles.css"/>
-
+    <link rel="stylesheet" type="text/css" media="screen" href="./styles/index.css"/>
+    
+    
     <title>Travel Explorers & Influencers</title>
 </head>
     <body>
@@ -24,17 +23,13 @@
                 <span class="namePlaceholder"></span>
             </a>
             
-            
             <div class="navbar-collapse collapse" id="navbarColor01" style="">
                 <ul class="navbar-nav mr-auto">
                     <li class="nav-item active">
                         <a class="nav-link" href="./index.html">Home <span class="sr-only">(current)</span></a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="#">Login</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="#">Join</a>
+                        <a class="nav-link" href="./join.html">Join</a>
                     </li>
                     <li class="nav-item">
                         <a class="nav-link" href="#">Things To Do</a>
@@ -50,12 +45,24 @@
                     </li>
                 </ul>
                 <form class="form-inline my-2 my-lg-0">
-                <input class="form-control mr-sm-2" type="text" placeholder="Search">
-                <button class="btn btn-secondary my-2 my-sm-0" type="submit">Search</button>
+                    <input class="form-control mr-sm-2" type="text" placeholder="Search">
+                    <button class="btn btn-secondary my-2 my-sm-0" type="submit">Search</button>
                 </form>
             </div>
         </nav>
-
+        <div class="login floatContainer">
+            <form class="form-inline my-2 my-lg-0">
+                <input id = "loginAvartar" class="form-control mr-sm-2" type="text" placeholder="Avartar Name">
+                <input id = "loginPassword" type="password" class="form-control mr-sm-2" placeholder="Password">
+                <button class="btn btn-secondary my-2 my-sm-0" onclick="checkLocal()" type="submit">Submit</button>
+                <p class="loginLink">
+                    <a href="./join.html">Join HERE</a>
+                </p>
+                <p class="loginLink">
+                    <a href="#" onclick="localStorage.clear();">Clear Data</a>
+                </p>
+            </form>
+        </div>
         <!-- Welcome Page with minimal design -->
         <main>
             <section class="container">
@@ -153,6 +160,6 @@
         <script src="https://bootswatch.com/_vendor/popper.js/dist/umd/popper.min.js"></script>
         <script src="https://bootswatch.com/_vendor/bootstrap/dist/js/bootstrap.min.js"></script>
         <script src="https://bootswatch.com/_assets/js/custom.js"></script>
-        <script src="./index.js"></script>   
+        <script src="./index.js"></script>    
     </body>
 </html>
