@@ -50,19 +50,22 @@
                 </form>
             </div>
         </nav>
+        <!-- Login Validator -->
         <div class="login floatContainer">
-            <form class="form-inline my-2 my-lg-0">
+            <form onsubmit="event.preventDefault(); checkLocal();" class="form-inline my-2 my-lg-0">
                 <input id = "loginAvartar" class="form-control mr-sm-2" type="text" placeholder="Avartar Name">
                 <input id = "loginPassword" type="password" class="form-control mr-sm-2" placeholder="Password">
-                <button class="btn btn-secondary my-2 my-sm-0" onclick="checkLocal()" type="submit">Submit</button>
-                <p class="loginLink">
-                    <a href="./join.html">Join HERE</a>
-                </p>
-                <p class="loginLink">
-                    <a href="#" onclick="localStorage.clear();">Clear Data</a>
-                </p>
+                <button class="btn btn-secondary my-2 my-sm-0" type="submit">Submit</button>
+
+                <a href="./join.html" class="btn-mini" role="button">
+                    JOIN HERE
+                </a>
+                <a href="./index.html" class="btn-mini clearData" role="button">
+                    Clear Data
+                </a>
             </form>
         </div>
+        
         <!-- Welcome Page with minimal design -->
         <main>
             <section class="container indexBackground">
@@ -70,7 +73,7 @@
                     <h5 class="display-5">
                         Welcome!
                     </h5>
-                    <p class="lead">Join a community of travel explorers, who are looking to inspire or get inspired for the next adventures!</p>
+                    <p class="lead">Join a community of travel explorers, who are seeking to inspire or get inspired for the next adventures!</p>
                     <hr class="my-4">
                     <p>“ Take only memories, leave only footprints.” – Chief Seattle.</p>
                     <!-- Button redirects to published articles page-->

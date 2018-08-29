@@ -21,6 +21,10 @@ a:hover   {
     color: peru;
 }
 
+.btn-mini:hover {
+    color: orangered;
+}
+
 .loginLink {
     padding: 0.5em;
 }

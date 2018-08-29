@@ -5,7 +5,9 @@ function store() {
 
     window.localStorage.setItem("avartarNameLS", inputName.value);
     window.localStorage.setItem("inputPasswordLS", inputPassword.value);
-    window.onload = load;
+    // Redirects to user's dashboard upon successful registration
+    window.location.href = "/articles.html";
+    window.onload = load();
 }
 
 // Upon Page loads or refresh, personalize greeting with stored name
@@ -15,7 +17,7 @@ function load() {
       if (name !== null) {
         document.querySelector('.namePlaceholder').innerHTML = name;
       } else {
-          document.querySelector('.namePlaceholder').innerHTML = "Traveler!";
+        document.querySelector('.namePlaceholder').innerHTML = "Yoda";
       }
   }
   window.onload = load();
@@ -27,9 +29,13 @@ function checkLocal() {
 
     if (inputLoginName.value === window.localStorage.getItem('avartarNameLS') && 
     inputLoginPassword.value === window.localStorage.getItem('inputPasswordLS')) {
-            alert("Success!");
-            load();
+            window.location.href = "https://www.google.com";
         } else {
             alert("Invalid Avartar Name and/or Password. Try Again!");
         }
 }
+
+// EventListener upon Clear Data request to remove Local Storage Data
+document.querySelector(".clearData").addEventListener("click", function(){
+    localStorage.clear();
+});

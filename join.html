@@ -55,7 +55,7 @@
         <main>
             <section class="container indexBackground">
                 <div class="jumbotron floatContainer">
-                    <form id = "signUpForm">
+                    <form id = "signUpForm" onsubmit="event.preventDefault(); store();">
                         <fieldset>
                             <legend>Creating a New Account</legend>
                         </fieldset>
@@ -104,7 +104,7 @@
                             <input class="form-check-input" type="checkbox" value="">
                                 Flying
                          </div>
-                        <button onclick="store()" type="submit" class="btn btn-primary">Submit</button>
+                        <button type="submit" class="btn btn-primary">Submit</button>
                     </form>
                     
                 </div>
