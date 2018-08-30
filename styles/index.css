@@ -21,6 +21,16 @@ a:hover   {
     color: peru;
 }
 
+.notMe {
+    color: rgb(67, 126, 235);
+}
+
+.btn-mini {
+    text-decoration: none;
+    color:blue;
+    margin: 0.5em;
+}
+
 .btn-mini:hover {
     color: orangered;
 }
@@ -43,8 +53,4 @@ a:hover   {
 /* Positioning */
 .floatRight {
     float: right;
-}
-
-.center {
-    align-items: center;
 }

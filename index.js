@@ -1,4 +1,8 @@
 // Store AvartarName and Password in Local Storage for later use
+// document.addEventListener("DOMContentLoaded", function(event) {
+//     load()
+// }
+
 function store() {
     var inputName = document.querySelector("#avartarName");
     var inputPassword = document.querySelector("#inputPassword1");
@@ -10,14 +14,22 @@ function store() {
     window.onload = load();
 }
 
-// Upon Page loads or refresh, personalize greeting with stored name
+// Upon Page loads or refresh, personalize greetings
 function load() {
     console.log("Page load detected!");
     var name = window.localStorage.getItem('avartarNameLS');
       if (name !== null) {
+        // Replace namePlaceholder with avartarName
         document.querySelector('.namePlaceholder').innerHTML = name;
+        document.querySelector('.avartarLogout').innerHTML = name;
+        // Remove loginValidator
+        document.querySelector(".login").style.display="none";
+        // Add Not avartarName for SignOut
+        document.querySelector(".notMe").style.display="block";
       } else {
         document.querySelector('.namePlaceholder').innerHTML = "Yoda";
+        document.querySelector(".login").style.display="block";
+        document.querySelector(".notMe").style.display="none";
       }
   }
   window.onload = load();
@@ -38,4 +50,10 @@ function checkLocal() {
 // EventListener upon Clear Data request to remove Local Storage Data
 document.querySelector(".clearData").addEventListener("click", function(){
     localStorage.clear();
+});
+
+document.querySelector(".notMe").addEventListener("click", function(){
+    document.querySelector('.namePlaceholder').innerHTML = "Yoda";
+    document.querySelector(".login").style.display="block";
+    document.querySelector(".notMe").style.display="none";
 });
