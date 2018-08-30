@@ -1,47 +1,63 @@
 // Store AvartarName and Password in Local Storage for later use
-// document.addEventListener("DOMContentLoaded", function(event) {
-//     load()
-// }
-
 function store() {
     var inputName = document.querySelector("#avartarName");
     var inputPassword = document.querySelector("#inputPassword1");
-
-    window.localStorage.setItem("avartarNameLS", inputName.value);
-    window.localStorage.setItem("inputPasswordLS", inputPassword.value);
+    var loginDatabase = {   users: {avartar: inputName.value,
+                                    password: inputPassword.value
+                        }
+    };
+    // Storing identified object data into local storage
+    window.localStorage.setItem("database", JSON.stringify(loginDatabase));
+    // Assign status as loggedIn
+    var statusCheck = "loggedIn";
+    window.localStorage.setItem("status", statusCheck);
     // Redirects to user's dashboard upon successful registration
-    window.location.href = "/articles.html";
-    window.onload = load();
-}
-
-// Upon Page loads or refresh, personalize greetings
+    window.location.href = "./dashboard.html";
+};
+// Upon Page loads or refresh, validate loggedStatus and personalize greetings (NEW)
 function load() {
-    console.log("Page load detected!");
-    var name = window.localStorage.getItem('avartarNameLS');
-      if (name !== null) {
-        // Replace namePlaceholder with avartarName
-        document.querySelector('.namePlaceholder').innerHTML = name;
-        document.querySelector('.avartarLogout').innerHTML = name;
-        // Remove loginValidator
-        document.querySelector(".login").style.display="none";
-        // Add Not avartarName for SignOut
-        document.querySelector(".notMe").style.display="block";
-      } else {
-        document.querySelector('.namePlaceholder').innerHTML = "Yoda";
-        document.querySelector(".login").style.display="block";
+    // LoggedIn status validation
+    var statusCheck = window.localStorage.getItem("status");
+    console.log(statusCheck)
+    if (statusCheck === null || statusCheck === "loggedOut"){
+            console.log("I am redirected to Home Page!")
+        document.querySelector('.namePlaceholder').innerHTML = "Yoda!";
         document.querySelector(".notMe").style.display="none";
-      }
-  }
-  window.onload = load();
+        document.querySelector(".login").style.display="block";
+        document.querySelector(".dashboardNav").style.display="none";
+            console.log("Default avartarName, hide dashboardNav & Not avartarName?, and show login NavBar")
+    } 
+    else {
+        var retrievedName = JSON.parse(window.localStorage.getItem("database")).users.avartar;
+            console.log(retrievedName + "<<<<< Name is retrieved!")
+            console.log("User Information exists!")
+        
+        // Replace namePlaceholder with avartarName
+        document.querySelector('.namePlaceholder').innerHTML = retrievedName;
+        // Add Not (avartarLogout)? for SignOut
+        document.querySelector(".notMe").style.display="block";
+        document.querySelector('.avartarLogout').innerHTML = retrievedName;
+        // Remove Login navBar
+        document.querySelector(".login").style.display="none";
+        document.querySelector(".dashboardNav").style.display="block";
+            console.log("Display avartarName, dashboardNav & show Not avartarName? & hide login NavBar")
+    }
+}
+window.onload = load();
 
 //   Valiate Login Inputs with stored Local Storage using querySelector
 function checkLocal() {
     var inputLoginName = document.querySelector("#loginAvartar");
     var inputLoginPassword = document.querySelector("#loginPassword");
+    var retrievedName = JSON.parse(window.localStorage.getItem("database")).users.avartar;
+    var retrievedPassword = JSON.parse(window.localStorage.getItem("database")).users.password;
 
-    if (inputLoginName.value === window.localStorage.getItem('avartarNameLS') && 
-    inputLoginPassword.value === window.localStorage.getItem('inputPasswordLS')) {
-            window.location.href = "https://www.google.com";
+    if (inputLoginName.value === retrievedName && 
+    inputLoginPassword.value === retrievedPassword) {
+            window.location.href = "./dashboard.html";
+            // Assign status as loggedIn
+            var statusCheck = "loggedIn";
+            window.localStorage.setItem("status", statusCheck);
         } else {
             alert("Invalid Avartar Name and/or Password. Try Again!");
         }
@@ -52,8 +68,9 @@ document.querySelector(".clearData").addEventListener("click", function(){
     localStorage.clear();
 });
 
+// EventListener upon user clicks Not avartarName to toggle status
 document.querySelector(".notMe").addEventListener("click", function(){
-    document.querySelector('.namePlaceholder').innerHTML = "Yoda";
-    document.querySelector(".login").style.display="block";
-    document.querySelector(".notMe").style.display="none";
+    var statusCheck = "loggedOut";
+    window.localStorage.setItem("status", statusCheck);
+    load();
 });
