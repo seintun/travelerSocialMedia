@@ -29,9 +29,47 @@ Imagine the time spent researching and planning for your next memorable trip dur
 ## Contributing
 Pull requests are welcome. For major changes, please open an issue first to discuss what you would like to change.
 
-`$ git clone https://github.com/(github-user)/classtest.git`
+`$ git clone https://github.com/(github-user)/travelerSocialMedia.git`
 
 Please make sure to update tests as appropriate.
 
 ## License
-[Yolo!Yeti](http://YoloYeti.surge.sh)
+[Yolo!Yeti](http://travelExplorer.surge.sh)
+
+### Screenshots
+1. Landing Page (Desktop)
+
+![Image of Landing Page Desktop](./screenshots/1LandingPage(Desktop).png)
+
+2. Landing Page (iPad Landscape)
+
+![Image of Landing Page iPad Landscape](./screenshots/1aLandingPage(MobileiPadLandscape).png)
+
+3. Landing Page (iPhone 5)
+
+![Image of Landing Page iPhone 5](./screenshots/1bLandingPage(MobileiPhone5).png)
+
+3. Landing Page (iPhone X)
+
+![Image of Landing Page iPhone X](./screenshots/1cLandingPage(MobileiPhoneX).png)
+
+4. Mobile Dropdown Menu
+
+![Image of Dropdown Menu](./screenshots/2MenuDropdown(MobileiPhone5).png)
+
+5. Join Registration Page
+
+![Image of Join Registration](./screenshots/3Join.png)
+
+6. User Dashboard
+
+![Image of User Dashboard](./screenshots/4UserDashboard.png)
+
+7. Login Process
+
+![Image of Login Process](./screenshots/5Login Process.png)
+
+8. Local Storage Preview
+
+![Image of Local Storage](./screenshots/6Local Storage.png)
+
