@@ -1,7 +1,7 @@
 # Yolo! Yeti
 
 ### Description
-Imagine the time spent researching and planning for your next memorable trip during valuable yet short vacation.
+>Imagine the time spent researching and planning for your next memorable trip during valuable yet short vacation.
 
 **Yolo! Yoda** is striving to deliver the seamless experience to individuals, who are looking for inspiring yet tailored travel plans curated by experienced wanderlust travel bloggers in the industry.
 
@@ -25,6 +25,10 @@ Imagine the time spent researching and planning for your next memorable trip dur
 * HTML *(Hypertext Markup Language)*
 * CSS *(Cascading Style Sheets)*
 * JavaScript
+
+## Agile Project Tracking
+>Trello:
+https://trello.com/b/GInKh2NL/sein-tun-galvanize-g101-wdi-quarter-project
 
 ## Contributing
 Pull requests are welcome. For major changes, please open an issue first to discuss what you would like to change.
