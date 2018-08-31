@@ -1,7 +1,7 @@
 # Yolo! Yeti
 
 ### Description
-Imagine the time spent researching and planning for your next memorable trip during valuable yet short vacation.
+>Imagine the time spent researching and planning for your next memorable trip during valuable yet short vacation.
 
 **Yolo! Yoda** is striving to deliver the seamless experience to individuals, who are looking for inspiring yet tailored travel plans curated by experienced wanderlust travel bloggers in the industry.
 
